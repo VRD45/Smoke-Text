@@ -1,0 +1,52 @@
+*{
+  margin: 0px;
+}
+body{
+  background: black;
+}
+section{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+section .text{
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  user-select: none;
+}
+section .text span{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+span.active{
+  transition-timing-function: ease;
+  animation: smoke 2s linear forwards;
+}
+/* keyframe animation */
+@keyframes smoke
+{
+  0%{
+    color: orange;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  }
+  50%{
+    font-size: 80px;
+    filter: blur(10px);
+    opacity: 1;
+    color: red;
+    pointer-events: none;
+    transform: translateX(150px) translateY(-150px) rotate(360deg) scale(2);
+  }
+  100%{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
+  }
+}

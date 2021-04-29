@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Smoke Text</title>
+  </head>
+  <body>
+    <section>
+      <p class="text">Smoke Effect</p>
+    </section>
+    <script>
+      var usertext = prompt("Enter the text:","Smoke Text Effect");
+      document.querySelector('.text').innerHTML = usertext;           //changing text with user given text
+      const text = document.querySelector('.text');
+      text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");  //seprate the text each letter by span tag
+    const letters=document.querySelectorAll('span');
+    for ( i=0; i<letters.length; i++){
+      letters[i].addEventListener("mouseover", function                //eventlistener when mouseover that letter in span tag
+      (){
+        this.classList.add('active');                          //add class active to the mouse over span tag
+      })
+    }
+    </script>
+   </body>
+</html>
